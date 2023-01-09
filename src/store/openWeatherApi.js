@@ -87,7 +87,7 @@ export default {
           const weatherIcon = res.data.hourly[i].weather[0].icon;
           images[i] = `src/assets/images/${weatherIcon}.png`;
         }
-
+ 
         context.commit('SET_IMAGEPATH', images);
         context.commit('SET_CURRENT_WEATHER', res.data.current); // 조회하는 현재시간에 대한 날씨데이터
         context.commit('SET_TIMELY_WEATHER', res.data.hourly); // 시간대별 날씨데이터
