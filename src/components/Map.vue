@@ -6,11 +6,9 @@
 
 <script>
 import MapPositions from '~/assets/map-positions.json';
-
 export default {
   mounted() {
     const API_KEY = '53052127d434ce19a616b273b8b3bd81';
-
     if (window.kakao && window.kakao.maps) {
       this.initMap();
     } else {
@@ -25,8 +23,8 @@ export default {
     initMap() {
       const mapContainer = document.getElementById('map'); // 지도를 표시할 div
       const mapOption = {
-        center: new kakao.maps.LatLng(36.73035, 127.967487), // 지도의 중심좌표
-        level: 13, // 지도의 확대 레벨
+        center: new kakao.maps.LatLng(37.5683, 126.9778), // 지도의 중심좌표
+        level: 10, // 지도의 확대 레벨
       };
       const map = new kakao.maps.Map(mapContainer, mapOption);
       const positions = MapPositions.map(pos => ({
@@ -57,12 +55,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/scss/main.scss';
-
 #mapContainer {
   @include center;
   width: 100%;
   height: 35%;
-
   #map {
     width: 80%;
     height: 90%;
